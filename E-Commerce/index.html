@@ -1,25 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <link rel="stylesheet" href="./style.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>E-Commerce</title>
+    <link rel="stylesheet" href="./styles.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
 </head>
 
 <body>
-
-
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">E-Commerce</a>
@@ -35,13 +26,11 @@
                     </li>
                     <li class="nav-item">
                         <button class="nav-link" type="button" data-bs-toggle="modal" data-bs-target="#addProduct">Add
-                            Product</button>
+                            Product</a>
                     </li>
-
                 </ul>
                 <div class="d-flex" role="search">
-                    <a href="./cart.html" class="nav-link"><i class="fa-solid fa-cart-shopping"></i><sup
-                            class="badge rounded-pill text-bg-danger" id="cartLength">0</sup></a>
+                    <a href="./cart.html" class="nav-link">Cart<sup class="badge rounded-pill text-bg-danger" id="cartLength">0</sup></a>
                     <!-- add icon for basket from  fontAwesome  -->
                 </div>
             </div>
@@ -49,30 +38,24 @@
     </nav>
 
 
+    <!-- Hero Section  -->
 
+    <h1 class="text-center">Products</h1>
+<nav><input type=search /> 
+    <select>
+        <option>Select option</option>
+        <option>Filter By category</option>
+        <option>filter by brand </option>
+        <option>low to high </option>
+        <option>high to low</option>
 
-
-    <!----hero section----->
-
-
-
-    <h1 class="text-center">Product</h1>
-
+    </select>
+     </nav>
     <div class="container text-center">
         <div class="row" id="renderProducts"></div>
     </div>
 
-
-
-
-
-
-
-
-
-
-
-    <!-- Modal for Add Product -->
+    <!-- Modal for Add product -->
     <div class="modal fade" id="addProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -83,7 +66,7 @@
                 <div class="modal-body">
                     <div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="title" placeholder="Add Product Name here">
+                            <input type="text" class="form-control" id="title" placeholder="Add Product name here">
                             <label for="title">Title</label>
                         </div>
                         <div class="form-floating mb-3">
@@ -91,36 +74,35 @@
                             <label for="description">Description</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <select class="form-select" id="category">
-                                <option selected disabled>select category</option>
-                                <option value="Electronics">Electronics</option>
-                                <option value="clothing">clothing</option>
-                                <option value="Food">Food</option>
-                                <option value="Home">Home</option>
-                                <option value="Beauty">Beauty</option>
-                            </select>
+                            <!-- <input type="text" class="form-control" id="category" placeholder="category"> -->
                             <label for="category">Category</label>
+                            <!-- add select options for category  -->
+                              
+                             <select id="category">
+                                <option value="">select options</option>
+                                <option value="Electronics">Electronics</option>
+                                <option value="Kitchen Accessories">Kitchen Accessories</option>
+                             </select>
                         </div>
                         <div class="form-floating mb-3">
-                            <!-- add select option for brand  -->
-                            <select class="form-select" id="brand">
-                                <option selected disabled>select category</option>
-                                <option value="Electronics">Apple</option>
-                                <option value="clothing">Redmi</option>
-                                <option value="Food">Samsung</option>
-                                <option value="Home">Vivo</option>
-                                <option value="Beauty">Oppo</option>
-                            </select>
+                            <!-- <input type="text" class="form-control" id="brand" placeholder="brand"> -->
                             <label for="brand">Brand</label>
+                            <!-- add select option for brand  -->
+                               <select id="brand">
+                                <option value="">select options</option>
+                                <option value="Electronics">Samsung</option>
+                                <option value="Kitchen Accessories">Hokins</option>
+                             </select>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="number" class="form-control" id="price" placeholder="Price">
+                            <input type="number" class="form-control" id="price" placeholder="price">
                             <label for="price">Price</label>
                         </div>
                         <div class="form-floating">
                             <input type="number" class="form-control" id="quantity" placeholder="quantity" value="10">
                             <label for="quantity">quantity</label>
                         </div>
+
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -131,22 +113,10 @@
         </div>
     </div>
 
-
-
-
-
-
-
-
-
-
     <script src="./script.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
-
-
 </body>
 
 </html>

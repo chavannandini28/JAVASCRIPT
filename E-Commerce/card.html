@@ -25,18 +25,30 @@
        
     <tr>
       <th scope="row">${i+1}</th>
-      <td style="width:120px; text-align:left">${pc.title}</td>
-      <td>${pc.price}</td>
+      <td style="width:120px; text-align:left">${pc.product_name}</td>
+      <td>${pc.product_price}</td>
+      <td>
+        <button class="btn btn-success">-</button>
+        ${pc.quantity_inCart}
+        <button class="btn btn-success">+</button>
+        </td>
       <td> <button class='btn btn-danger' onclick='RemoveFromCart(${pc.id})'>X</button></td>
     </tr>
         `).join('')
 
 
         // below elements still render after remve all items 
+        
 if(cartFromLocal1.length>0){
       deliveryCharges = 20
       discount = 10
-      totalAmtCartItem =  cartFromLocal1.reduce((sum, p)=> p.price + sum , 0)
+      totalAmtCartItem =  cartFromLocal1.reduce((sum, p)=> p.product_price * p.quantity_inCart + sum , 0)
+
+
+      // [{id:1, product_name:mobile,product_price:5,quantityInCart:5},
+      //   {id:2, product_name:tv,product_price:10,quantityInCart:1},
+      //   {id:3, product_name:induction,product_price:2,quantityInCart:2}
+      // ]
 
       console.log(totalAmtCartItem,"totalAmtCartItem")
       totalAmount = totalAmtCartItem + deliveryCharges - (((totalAmtCartItem) *10 ) /100 )
