@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dream Homes</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<script>
+if(localStorage.getItem("isLoggedIn") !== "true"){
+    window.location.href = "login.html";
+}
+</script>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
+<div class="container">
+<a class="navbar-brand">🏡 DreamHomes</a>
+
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="menu">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="#properties">Properties</a></li>
+<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+</ul>
+
+<button onclick="logout()" class="btn btn-danger ms-3">Logout</button>
+</div>
+</div>
+</nav>
+
+<section class="hero">
+<img src="images/hero.jpg" class="hero-img">
+
+<div class="hero-content text-center text-white">
+<h1>Find Your Dream Home</h1>
+
+<div class="search-box mt-3">
+<input id="searchLocation" placeholder="Location" class="form-control mb-2">
+
+<select id="propertyType" class="form-control mb-2">
+<option value="">Type</option>
+<option value="House">House</option>
+<option value="Apartment">Apartment</option>
+</select>
+
+<label>Price ≤ ₹<span id="priceValue">300</span>L</label>
+<input type="range" id="priceRange" min="10" max="300" value="300">
+
+<button onclick="filterProperties()" class="btn btn-warning mt-2 w-100">Search</button>
+</div>
+
+</div>
+</section>
+
+<section id="properties" class="container my-5">
+<h2 class="text-center mb-4">Featured Properties</h2>
+
+<div class="row g-4">
+
+<div class="col-md-4 property" data-location="Mumbai" data-type="House" data-price="250">
+<div class="card">
+<img src="images/house1.jpg">
+<div class="card-body">
+<h5>Luxury Villa</h5>
+<p>Mumbai - ₹2.5 Cr</p>
+<a href="details.html" class="btn btn-dark w-100">Details</a>
+</div>
+</div>
+</div>
+
+<div class="col-md-4 property" data-location="Pune" data-type="Apartment" data-price="80">
+<div class="card">
+<img src="images/house2.jpg">
+<div class="card-body">
+<h5>Modern Apartment</h5>
+<p>Pune - ₹80 Lakh</p>
+<a href="details.html" class="btn btn-dark w-100">Details</a>
+</div>
+</div>
+</div>
+
+<div class="col-md-4 property" data-location="Delhi" data-type="House" data-price="120">
+<div class="card">
+<img src="images/house3.jpg">
+<div class="card-body">
+<h5>Family House</h5>
+<p>Delhi - ₹1.2 Cr</p>
+<a href="details.html" class="btn btn-dark w-100">Details</a>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="contact" class="container my-5">
+<h2 class="text-center mb-4">Contact Us</h2>
+
+<form onsubmit="submitForm(event)">
+<div class="row">
+<div class="col-md-6 mb-3">
+<input type="text" class="form-control" placeholder="Your Name" required>
+</div>
+<div class="col-md-6 mb-3">
+<input type="email" class="form-control" placeholder="Email" required>
+</div>
+</div>
+
+<textarea class="form-control mb-3" placeholder="Message" required></textarea>
+
+<button class="btn btn-dark w-100">Send Message</button>
+</form>
+</section>
+
+<footer class="bg-dark text-white text-center p-3">
+<p>© 2026 DreamHomes | All Rights Reserved</p>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
