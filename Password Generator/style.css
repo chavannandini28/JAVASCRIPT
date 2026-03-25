@@ -1,0 +1,69 @@
+body{
+font-family: Arial;
+background:#f4f6f9;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.container{
+background:white;
+padding:30px;
+width:350px;
+border-radius:8px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+h1{
+text-align:center;
+margin-bottom:20px;
+}
+
+input[type="number"],
+input[type="password"]{
+width:100%;
+padding:8px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+.options label{
+display:block;
+margin:5px 0;
+}
+
+button{
+background:#2d7ef7;
+color:white;
+border:none;
+padding:8px 15px;
+border-radius:5px;
+cursor:pointer;
+margin-top:10px;
+}
+
+button:hover{
+background:#1c5ed6;
+}
+
+.strength{
+width:100%;
+height:8px;
+background:#ddd;
+margin-top:10px;
+border-radius:5px;
+}
+
+#strength-bar{
+height:100%;
+width:0%;
+background:red;
+border-radius:5px;
+}
+
+.show{
+display:block;
+margin-top:8px;
+}
