@@ -46,7 +46,6 @@ body {
 
                 <h3 class="text-center mb-3">🎓 Student Registration</h3>
 
-                <input type="text" id="name" class="form-control mb-2" placeholder="Full Name">
                 <input type="text" id="username" class="form-control mb-2" placeholder="Username">
                 <input type="email" id="email" class="form-control mb-2" placeholder="Email">
                 <input type="password" id="password" class="form-control mb-2" placeholder="Password">
@@ -66,13 +65,11 @@ body {
 
 <script>
 function register() {
-    let name = document.getElementById("name").value;
+
     let username = document.getElementById("username").value;
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
     let confirmPassword = document.getElementById("confirmPassword").value;
-
-    if (name === "") return alert("Enter full name");
 
     let userPattern = /^[a-zA-Z0-9]{6,}$/;
     if (!userPattern.test(username))
@@ -88,7 +85,6 @@ function register() {
     if (password !== confirmPassword)
         return alert("Passwords do not match");
 
-    localStorage.setItem("name", name);
     localStorage.setItem("username", username);
     localStorage.setItem("email", email);
     localStorage.setItem("password", password);
