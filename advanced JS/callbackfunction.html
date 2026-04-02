@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .redText {
+            color: red
+        }
+
+        .textColor {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="textColor redText">This is heading</h1>
+
+
+
+    <script>
+        function displayName() {
+            console.log("Company name -> Wisdom sprouts")
+        }
+        function getData(cb) {
+            setTimeout(cb, 5000)
+        }
+
+        getData(displayName)
+
+        console.log("start")
+        for (i = 1; i <= 5; i++) {
+            console.log(i)
+        }
+        console.log("End")
+        console.log("________________________")
+        console.log("START")
+        setTimeout(() => {
+            for (i = 1; i <= 5; i++) {
+                console.log(i)
+            }
+        }, 3000)
+
+        console.log("END")
+
+        const msg = "Chai with success"
+        const yesChai = false
+
+        const ChaiInRain = new Promise((resolve, reject) => {
+
+            if (yesChai) {
+                resolve(msg)
+            } else {
+                reject("No Chai")
+            }
+        })
+
+        ChaiInRain
+            .then(data => console.log(data))
+            .catch(err => console.log(err, "Erɽrrrrrrooooorrrrr"))
+
+
+        // fetch("getDatFromWeather",{
+        //     body:{nama:"John",emal:"fgh@ghj"},
+        //     method:'POST',
+        //     headers:{}
+        // }).then(res=>res.json()).then(data=>console.log(data)).catch(error=>console.log(error))
+
+        async function fetchWeather() {
+            await fetch("api for weather")
+                .then(res => res.json())
+                .then(data => console.log(data))
+                .catch(error => console.log(error))
+        }
+        // callback , setTimeout, Promise, resolve ,reject, fetch(),
+        setInterval(() => {
+            console.log("Helloooooo after 5 sec")
+        }, 5000)
+
+    </script>
+
+    <h3 style="text-align: center;">
+        <span id="hr"></span>
+        :
+        <span id="min"></span>
+        :
+        <span id="sec"></span>
+    </h3>
+
+    <script>
+
+        function getDigiClock() {
+            const today = new Date()
+            console.log(today)
+            hr = today.getHours()
+            console.log(hr)
+            document.getElementById("hr").textContent = hr
+
+            min = today.getMinutes()
+            console.log(min)
+            document.getElementById('min').textContent = min
+
+            sec = today.getSeconds()
+            console.log(sec)
+            document.getElementById('sec').textContent = sec
+        }
+
+
+        setInterval(getDigiClock, 1000)
+    </script>
+
+
+</body>
+
+</html>
